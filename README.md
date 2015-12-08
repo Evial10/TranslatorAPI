@@ -5,16 +5,16 @@ Library Ruby the translator based on Yandex API.
 You need to get a [key](https://tech.yandex.ru/key/form.xml?service=trnsl) to use translator
 
 ### Usage
-You create an instance of the class Translator::TextProcessing to be transferred to the method #new key and language of the translation.
+You create an instance of the class Translator::Text to be transferred to the method #new key and language of the translation.
 The default language of translation Russian.
 
 ```ruby
-translator = TranslatorAPI::TextProcessing.new("your key","en") 
+translator = TranslatorAPI::Text.new("your key","en") 
 ```
 If your key or reduction of language is wrong it will return nil.
 
 ```ruby
-Translator::TextProcessing.new("invalid key","en") # => nil
+Translator::Text.new("invalid key","en") # => nil
 ```
 
 ## Method #get_list
@@ -44,7 +44,7 @@ translator.detect "Something text" # => English
 Returns the value of a language depends on the reduction in the the transmitted method #new.
 
 ```ruby
-TranslatorAPI::TextProcessing.new("your key","zh").detect "Something text" # => 英語 ("zh" - Chinese)
+TranslatorAPI::Text.new("your key","zh").detect "Something text" # => 英語 ("zh" - Chinese)
 ```
 
 If the language is not supported it will return nil.
