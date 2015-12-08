@@ -4,7 +4,7 @@ module TranslatorAPI
   
   module Requests
   
-    class SentPostRequests
+    class Post
         
       def initialize
         @uri = nil    

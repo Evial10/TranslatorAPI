@@ -23,7 +23,7 @@ module TranslatorAPI
         when ArgumentError    
           message_error(error) 
           if args      
-            return  nil if args.instance_of? TextProcessing  
+            return  nil if args.instance_of? Text  
           else
             raise ArgumentError, error.message
           end          

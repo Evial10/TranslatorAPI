@@ -1,23 +1,23 @@
 require 'spec_helper'
 
-describe TranslatorAPI::TextProcessing do
+describe TranslatorAPI::Text do
   
   it 'has a version number' do
     expect(TranslatorAPI::VERSION).not_to be nil
   end
  
   it 'Incorrect reduction' do
-    translator = TranslatorAPI::TextProcessing.new('trnsl.1.1.20151124T095711Z.d41f13a82e427408.736db2b43c90575b5934e1b988554b94947240e1',"Incorrect reduction")
+    translator = TranslatorAPI::Text.new('trnsl.1.1.20151124T095711Z.d41f13a82e427408.736db2b43c90575b5934e1b988554b94947240e1',"Incorrect reduction")
     expect(translator).to be_instance_of NilClass  
   end
   
   it 'Invalid key' do
-    translator = TranslatorAPI::TextProcessing.new('Invalid key')
+    translator = TranslatorAPI::Text.new('Invalid key')
     expect(translator).to be_instance_of NilClass  
   end
   
   before :each do
-      @translator = TranslatorAPI::TextProcessing.new 'trnsl.1.1.20151124T095711Z.d41f13a82e427408.736db2b43c90575b5934e1b988554b94947240e1'      
+      @translator = TranslatorAPI::Text.new 'trnsl.1.1.20151124T095711Z.d41f13a82e427408.736db2b43c90575b5934e1b988554b94947240e1'      
   end 
   
   describe "#get_list" do

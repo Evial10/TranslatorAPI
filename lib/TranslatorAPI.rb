@@ -1,5 +1,5 @@
 require "TranslatorAPI/version"
 
 module TranslatorAPI
-require 'TranslatorAPI/TextProcessing'  
+require 'TranslatorAPI/Text'  
 end

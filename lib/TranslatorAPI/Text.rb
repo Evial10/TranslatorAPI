@@ -1,9 +1,9 @@
 require 'json'
 require "TranslatorAPI/Error/YandexError"
-require "TranslatorAPI/Requests/SentPostRequests"
+require "TranslatorAPI/Requests/Post"
 
 module TranslatorAPI
-  class TextProcessing
+  class Text
     
     HOST = "https://translate.yandex.net/api/v1.5/tr.json/"
     MAX_TEXT = 10_000  
@@ -19,7 +19,7 @@ module TranslatorAPI
     def initialize(key, lang = "ru")
       @key = key
       @error = Error::YandexError.new
-      @yandex = Requests::SentPostRequests.new
+      @yandex = Requests::Post.new
       @lang = lang 
       list = get_list     
       fail ArgumentError, "Key is invalid or blocked" unless list[0] && list[1] 
