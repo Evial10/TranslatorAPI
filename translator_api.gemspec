@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'TranslatorAPI/version'
+require 'translator_api/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "TranslatorAPI"
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   
-  spec.files         = ["lib/TranslatorAPI.rb","lib/TranslatorAPI/Text.rb","lib/TranslatorAPI/version.rb","lib/TranslatorAPI/Error/YandexError.rb","lib/TranslatorAPI/Requests/Post.rb"]
+  spec.files         = ["lib/translator_api.rb","lib/translator_api/translator.rb","lib/translator_api/parser.rb","lib/translator_api/version.rb","lib/translator_api/error/yandex_error.rb","lib/translator_api/requests/connect.rb"]
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]

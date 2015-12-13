@@ -8,13 +8,25 @@ You need to get a [key](https://tech.yandex.ru/key/form.xml?service=trnsl) to us
 You create an instance of the class Translator::Text to be transferred to the method #new key and language of the translation.
 The default language of translation Russian.
 
+You can use ready-made gem installing them with [rubygems](https://rubygems.org)
+
 ```ruby
-translator = TranslatorAPI::Text.new("your key","en") 
+gem install TranslatorAPI
+```
+
+After require you can use gem
+
+```ruby
+require 'translator_api'
+```
+
+```ruby
+translator = TranslatorAPI::Translator.new("your key","en") 
 ```
 If your key or reduction of language is wrong it will return nil.
 
 ```ruby
-Translator::Text.new("invalid key","en") # => nil
+Translator::Translator.new("invalid key","en") # => nil
 ```
 
 ## Method #get_list
@@ -44,7 +56,7 @@ translator.detect "Something text" # => English
 Returns the value of a language depends on the reduction in the the transmitted method #new.
 
 ```ruby
-TranslatorAPI::Text.new("your key","zh").detect "Something text" # => 英語 ("zh" - Chinese)
+TranslatorAPI::Translator.new("your key","zh").detect "Something text" # => 英語 ("zh" - Chinese)
 ```
 
 If the language is not supported it will return nil.

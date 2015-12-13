@@ -15,18 +15,11 @@ module TranslatorAPI
         :translation_not_suppoted => 501    
       }    
  
-      def handling_error(error, *args)
+      def handling_error(error)
         case error
         when YandexError    
           message_error(error)
-          nil
-        when ArgumentError    
-          message_error(error) 
-          if args      
-            return  nil if args.instance_of? Text  
-          else
-            raise ArgumentError, error.message
-          end          
+          nil                          
         else
           raise error.class, error.message
         end      
@@ -35,7 +28,7 @@ module TranslatorAPI
       private
   
       def message_error(error)
-        puts "#{error.class} : #{error.message}"
+       puts "#{error.class} : #{error.message}"
       end
     end
   end
